@@ -28,7 +28,7 @@ const review = proxy(reviews);
 app.use('/', review);
 
 const reservations = {
-    target: 'http://localhost:3002',
+    target: 'http://3.135.103.1',
     changeOrigin: true,
     onProxyRes: function (proxyRes) {
         proxyRes.headers['Access-Control-Allow-Origin'] = '*';
