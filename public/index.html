@@ -1,19 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            grid-template-rows: min-content min-content min-content min-content min-content;
+            grid-template-areas:
+            "f f"
+            "a a"
+            "b c"
+            "d c"
+            "g c"
+            "e e";
+            grid-gap: 10px;
+        }
+        .searchbar {
+            grid-area: f;
+            width: 99%;
+            padding-right: 6px;
+        }
+        .gallery {
+            grid-area: a;
+        }
+        .reservations {
+            position: sticky;
+            top: 20px;
+            display:inline !important;
+            margin: 0px !important;
+            align-items:left;
+        }
+        .host {
+            width:100%;
+            height:400px;
+            align-self: auto;
+            grid-area: b;
+        }
+        .wrapper {
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .reviews {
+            padding-left: 80px;
+            width:100%;
+            grid-area: e;
+        }
+        .description {
+            grid-area: d;
+            width: 100%;
+            height: 500px;
+        }
+        .calendar {
+            grid-area: g;
+            width: 100%
+        }
+
+    </style>
+    <title>Airbnb</title>
 </head>
 <body>
-    <div id="reviews"></div>
-    <div id="reservations"></div>
-    <div id="gallery"></div>
+    <div class="container">
+    <img class="searchbar" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Search.png" width=100%>
+    <div class="gallery" id="gallery"></div>
+    <img class="host" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Screen+Shot+2019-12-13+at+2.54.48+PM.png">
+    <div class="reservations" id="reservations"></div>
+    <img class="description" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Description.png">
+    <img class="calendar" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Calendar.png">
+    </div>  
+    <div class="reviews" id="reviews" ></div>
     <div id="related-suggestions"></div>
 
 </body>
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<script src="http://localhost:3003/bundle.js"></script>
+<script src="https://fec-airbnb-reviews.s3-us-west-1.amazonaws.com/bundle.js"></script>
 <script src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/bundle.js"></script>
-<script src="http://localhost:3004/bundle.js"></script>
+<script src="https://airbnbphotogallery.s3-us-west-1.amazonaws.com/bundleAWS.js"></script>
 <script src="https://fecservices2.s3-us-west-1.amazonaws.com/app.bundle.js"></script>
 </html>
