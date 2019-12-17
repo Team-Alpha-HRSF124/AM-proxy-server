@@ -10,10 +10,10 @@
             grid-template-areas:
             "f f"
             "a a"
-            "b c"
-            "d c"
-            "g c"
-            "e e";
+            "h c"
+            "h c"
+            "h c"
+            "e c";
             grid-gap: 10px;
         }
         .searchbar {
@@ -23,6 +23,7 @@
         }
         .gallery {
             grid-area: a;
+            z-index: 10001;
         }
         .reservations {
             position: sticky;
@@ -30,12 +31,8 @@
             display:inline !important;
             margin: 0px !important;
             align-items:left;
-        }
-        .host {
-            width:100%;
-            height:400px;
-            align-self: auto;
-            grid-area: b;
+            padding-left: 200px;
+            z-index: 10000;
         }
         .wrapper {
             display:flex;
@@ -47,14 +44,13 @@
             width:100%;
             grid-area: e;
         }
-        .description {
-            grid-area: d;
+        .footer {
             width: 100%;
-            height: 500px;
         }
-        .calendar {
-            grid-area: g;
-            width: 100%
+        .info {
+            grid-area: h;
+            width: 100%;
+            padding-left: 100px;
         }
 
     </style>
@@ -64,14 +60,12 @@
     <div class="container">
     <img class="searchbar" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Search.png" width=100%>
     <div class="gallery" id="gallery"></div>
-    <img class="host" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Screen+Shot+2019-12-13+at+2.54.48+PM.png">
+    <img class="info" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/InfoPage.png">
     <div class="reservations" id="reservations"></div>
-    <img class="description" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Description.png">
-    <img class="calendar" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/Calendar.png">
-    </div>  
     <div class="reviews" id="reviews" ></div>
+    </div>  
     <div id="related-suggestions"></div>
-
+    <img class="footer" src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/footer.png">
 </body>
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
